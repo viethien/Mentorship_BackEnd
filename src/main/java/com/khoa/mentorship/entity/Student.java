@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -27,6 +29,10 @@ public class Student {
 	
 	@Column(name = "password")
 	private String password;
+	
+	@OneToOne
+	@JoinColumn(name="title_id")
+	private Highschool highschool;
 
 	public int getStudentId() {
 		return studentId;
@@ -66,6 +72,14 @@ public class Student {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public Highschool getHighschool() {
+		return highschool;
+	}
+
+	public void setHighschool(Highschool highschool) {
+		this.highschool = highschool;
 	}
 
 }

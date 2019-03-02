@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -36,6 +38,14 @@ public class Mentor {
 	
 	@Column(name = "visible")
 	private boolean visible;
+	
+	@OneToOne
+	@JoinColumn(name="title_id")
+	private Title title;
+	
+	@OneToOne
+	@JoinColumn(name="university_id")
+	private University university;
 
 	public int getMentorId() {
 		return mentorId;
@@ -100,5 +110,22 @@ public class Mentor {
 	public void setVisible(boolean visible) {
 		this.visible = visible;
 	}
+
+	public Title getTitle() {
+		return title;
+	}
+
+	public void setTitle(Title title) {
+		this.title = title;
+	}
+
+	public University getUniversity() {
+		return university;
+	}
+
+	public void setUniversity(University university) {
+		this.university = university;
+	}
+	
 
 }
