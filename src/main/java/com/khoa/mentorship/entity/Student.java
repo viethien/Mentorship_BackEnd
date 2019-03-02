@@ -31,7 +31,7 @@ public class Student {
 	private String password;
 	
 	@OneToOne
-	@JoinColumn(name="title_id")
+	@JoinColumn(name="highschool_id")
 	private Highschool highschool;
 
 	public int getStudentId() {

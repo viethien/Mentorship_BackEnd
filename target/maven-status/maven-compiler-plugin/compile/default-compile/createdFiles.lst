@@ -1,2 +1,16 @@
+com/khoa/mentorship/service/RegisterService.class
+com/khoa/mentorship/dao/RegisterDAO.class
+com/khoa/mentorship/model/RegisterModel.class
+com/khoa/mentorship/entity/Student.class
+com/khoa/mentorship/dao/impl/RegisterDAOImpl.class
 com/khoa/mentorship/controller/TestController.class
+com/khoa/mentorship/entity/Title.class
+com/khoa/mentorship/dao/MentorDAO.class
+com/khoa/mentorship/model/Types.class
+com/khoa/mentorship/entity/University.class
 com/khoa/mentorship/MentorshipApplication.class
+com/khoa/mentorship/entity/Highschool.class
+com/khoa/mentorship/entity/Mentor.class
+com/khoa/mentorship/entity/Enroll.class
+com/khoa/mentorship/controller/RegisterController.class
+com/khoa/mentorship/service/impl/RegisterServiceImpl.class

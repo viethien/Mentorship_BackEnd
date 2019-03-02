@@ -4,6 +4,7 @@ import javax.persistence.EntityManager;
 
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import com.khoa.mentorship.dao.RegisterDAO;
 import com.khoa.mentorship.entity.Mentor;
@@ -11,6 +12,7 @@ import com.khoa.mentorship.entity.Student;
 import com.khoa.mentorship.model.RegisterModel;
 import com.khoa.mentorship.model.Types;
 
+@Repository
 public class RegisterDAOImpl implements RegisterDAO {
 
 	@Autowired
