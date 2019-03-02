@@ -5,10 +5,12 @@ import javax.persistence.Query;
 
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import com.khoa.mentorship.dao.MentorDAO;
 import com.khoa.mentorship.entity.Mentor;
 
+@Repository
 public class MentorDAOImpl implements MentorDAO {
 	
 	@Autowired

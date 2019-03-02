@@ -19,7 +19,7 @@ public class TitleDAOImpl implements TitleDAO {
 	@Override
 	public Title getTitleById(int titleId) {
 		Session currentSession = entityManager.unwrap(Session.class);
-		Query query = currentSession.createQuery("from Highschool where titleId = :titleId");
+		Query query = currentSession.createQuery("from Title where titleId = :titleId");
 		query.setParameter("titleId", titleId);
 		if(query.getResultList().size() > 0) {
 			return (Title) query.getResultList().get(0);

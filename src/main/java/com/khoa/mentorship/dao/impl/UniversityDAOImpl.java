@@ -19,7 +19,7 @@ public class UniversityDAOImpl implements UniversityDAO {
 	@Override
 	public University getUniversityById(int universityId) {
 		Session currentSession = entityManager.unwrap(Session.class);
-		Query query = currentSession.createQuery("from Highschool where universityId = :universityId");
+		Query query = currentSession.createQuery("from University where universityId = :universityId");
 		query.setParameter("universityId", universityId);
 		if(query.getResultList().size() > 0) {
 			return (University) query.getResultList().get(0);
