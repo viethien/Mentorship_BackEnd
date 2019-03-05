@@ -60,4 +60,22 @@ public class UserDAOImpl implements UserDAO {
 		return false;		
 	}
 
+	@Override
+	public boolean activateAcccount(String email) {
+		Session currentSession = entityManager.unwrap(Session.class);
+		Student student = studentDAO.getStudentByEmail(email);
+		Mentor mentor = mentorDAO.getMentorByEmail(email);
+		if(student != null) {
+			student.setActive(true);
+			currentSession.update(student);
+			return true;
+		}
+		if(mentor != null) {
+			mentor.setActive(true);
+			currentSession.update(mentor);
+			return true;
+		}
+		return false;		
+	}
+
 }

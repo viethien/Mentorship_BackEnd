@@ -33,6 +33,9 @@ public class Student {
 	@OneToOne
 	@JoinColumn(name="highschool_id")
 	private Highschool highschool;
+	
+	@Column(name="active")
+	private boolean active;
 
 	public int getStudentId() {
 		return studentId;
@@ -80,6 +83,14 @@ public class Student {
 
 	public void setHighschool(Highschool highschool) {
 		this.highschool = highschool;
+	}
+
+	public boolean isActive() {
+		return active;
+	}
+
+	public void setActive(boolean active) {
+		this.active = active;
 	}
 
 }

@@ -21,4 +21,10 @@ public class UserServiceImpl implements UserService {
 		return userDAO.updateDetails(userDetailModel);
 	}
 
+	@Override
+	@Transactional
+	public boolean activateAcccount(String email) {
+		return userDAO.activateAcccount(email);
+	}
+
 }

@@ -14,6 +14,7 @@
 /Users/Khoa/Desktop/Mentorship_BackEnd/src/main/java/com/khoa/mentorship/dao/impl/UserDAOImpl.java
 /Users/Khoa/Desktop/Mentorship_BackEnd/src/main/java/com/khoa/mentorship/dao/UniversityDAO.java
 /Users/Khoa/Desktop/Mentorship_BackEnd/src/main/java/com/khoa/mentorship/dao/TitleDAO.java
+/Users/Khoa/Desktop/Mentorship_BackEnd/src/main/java/com/khoa/mentorship/service/EmailService.java
 /Users/Khoa/Desktop/Mentorship_BackEnd/src/main/java/com/khoa/mentorship/dao/StudentDAO.java
 /Users/Khoa/Desktop/Mentorship_BackEnd/src/main/java/com/khoa/mentorship/model/UserDetailModel.java
 /Users/Khoa/Desktop/Mentorship_BackEnd/src/main/java/com/khoa/mentorship/entity/Enroll.java
@@ -22,6 +23,7 @@
 /Users/Khoa/Desktop/Mentorship_BackEnd/src/main/java/com/khoa/mentorship/entity/University.java
 /Users/Khoa/Desktop/Mentorship_BackEnd/src/main/java/com/khoa/mentorship/model/RegisterModel.java
 /Users/Khoa/Desktop/Mentorship_BackEnd/src/main/java/com/khoa/mentorship/controller/RegisterController.java
+/Users/Khoa/Desktop/Mentorship_BackEnd/src/main/java/com/khoa/mentorship/service/impl/EmailServiceImpl.java
 /Users/Khoa/Desktop/Mentorship_BackEnd/src/main/java/com/khoa/mentorship/entity/Mentor.java
 /Users/Khoa/Desktop/Mentorship_BackEnd/src/main/java/com/khoa/mentorship/dao/impl/HighschoolDAOImpl.java
 /Users/Khoa/Desktop/Mentorship_BackEnd/src/main/java/com/khoa/mentorship/controller/TestController.java

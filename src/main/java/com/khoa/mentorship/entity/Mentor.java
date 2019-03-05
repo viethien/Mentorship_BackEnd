@@ -39,6 +39,9 @@ public class Mentor {
 	@Column(name = "visible")
 	private boolean visible;
 	
+	@Column(name="active")
+	private boolean active;
+	
 	@OneToOne
 	@JoinColumn(name="title_id")
 	private Title title;
@@ -111,6 +114,14 @@ public class Mentor {
 		this.visible = visible;
 	}
 
+	public boolean isActive() {
+		return active;
+	}
+
+	public void setActive(boolean active) {
+		this.active = active;
+	}
+
 	public Title getTitle() {
 		return title;
 	}
@@ -126,6 +137,5 @@ public class Mentor {
 	public void setUniversity(University university) {
 		this.university = university;
 	}
-	
 
 }

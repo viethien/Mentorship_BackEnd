@@ -13,6 +13,7 @@ com/khoa/mentorship/entity/Highschool.class
 com/khoa/mentorship/entity/Mentor.class
 com/khoa/mentorship/dao/impl/StudentDAOImpl.class
 com/khoa/mentorship/dao/impl/UserDAOImpl.class
+com/khoa/mentorship/service/impl/EmailServiceImpl.class
 com/khoa/mentorship/model/UserDetailModel.class
 com/khoa/mentorship/dao/UserDAO.class
 com/khoa/mentorship/controller/RegisterController.class
@@ -29,3 +30,4 @@ com/khoa/mentorship/MentorshipApplication.class
 com/khoa/mentorship/entity/Enroll.class
 com/khoa/mentorship/service/UserService.class
 com/khoa/mentorship/dao/impl/TitleDAOImpl.class
+com/khoa/mentorship/service/EmailService.class
