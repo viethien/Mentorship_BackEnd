@@ -25,7 +25,7 @@ public class RegisterController {
 	@PostMapping("/register")
 	public boolean registerUser(@RequestBody RegisterModel registerModel) {
 		try {
-			emailService.sendSimpleMessage(registerModel.getEmail(), "Activate Account", "Please click to activate");			
+			emailService.sendSimpleMessage(registerModel.getEmail(), "Activate Account", "Please click to activate: <a href='http://localhost:4200/activate-account?email=" + registerModel.getEmail() + ">Click here</a>");			
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
