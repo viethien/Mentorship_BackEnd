@@ -20,4 +20,9 @@ public class MentorServiceImpl implements MentorService {
 		return mentorDAO.getAllMentos();
 	}
 
+	@Override
+	public Mentor getMentorById(int id) {
+		return mentorDAO.getMentorById(id);
+	}
+
 }

@@ -37,4 +37,15 @@ public class MentorDAOImpl implements MentorDAO {
 		return mentors;
 	}
 
+	@Override
+	public Mentor getMentorById(int id) {
+		Session currentSession = entityManager.unwrap(Session.class);
+		Query query = currentSession.createQuery("from Mentor where mentorId = :mentorId");
+		query.setParameter("mentorId", id);
+		if(query.getResultList().size() > 0) {
+			return (Mentor) query.getResultList().get(0);
+		}
+		return null;
+	}
+
 }
