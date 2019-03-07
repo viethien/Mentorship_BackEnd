@@ -1,5 +1,7 @@
 package com.khoa.mentorship.dao.impl;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
@@ -25,6 +27,14 @@ public class MentorDAOImpl implements MentorDAO {
 			return (Mentor) query.getResultList().get(0);
 		}
 		return null;
+	}
+
+	@Override
+	public List<Mentor> getAllMentos() {
+		Session currentSession = entityManager.unwrap(Session.class);
+		Query query = currentSession.createQuery("from Mentor", Mentor.class);
+		List<Mentor> mentors = query.getResultList();
+		return mentors;
 	}
 
 }
