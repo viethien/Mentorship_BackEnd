@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.khoa.mentorship.model.LoginModel;
+import com.khoa.mentorship.model.LoginResponseModel;
 import com.khoa.mentorship.model.UserDetailModel;
 import com.khoa.mentorship.service.UserService;
 
@@ -32,7 +33,7 @@ public class UserController {
 	}
 	
 	@PostMapping("/login")
-	public boolean login(@RequestBody LoginModel loginModel) {
+	public LoginResponseModel login(@RequestBody LoginModel loginModel) {
 		return userService.login(loginModel);
 	}
 

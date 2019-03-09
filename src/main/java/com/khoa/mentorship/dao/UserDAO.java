@@ -1,6 +1,7 @@
 package com.khoa.mentorship.dao;
 
 import com.khoa.mentorship.model.LoginModel;
+import com.khoa.mentorship.model.LoginResponseModel;
 import com.khoa.mentorship.model.UserDetailModel;
 
 public interface UserDAO {
@@ -9,6 +10,6 @@ public interface UserDAO {
 	
 	public boolean activateAcccount(String email);
 	
-	public boolean login(LoginModel loginModel);
+	public LoginResponseModel login(LoginModel loginModel);
 
 }

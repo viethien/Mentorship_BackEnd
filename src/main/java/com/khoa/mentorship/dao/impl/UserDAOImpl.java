@@ -16,6 +16,7 @@ import com.khoa.mentorship.dao.UserDAO;
 import com.khoa.mentorship.entity.Mentor;
 import com.khoa.mentorship.entity.Student;
 import com.khoa.mentorship.model.LoginModel;
+import com.khoa.mentorship.model.LoginResponseModel;
 import com.khoa.mentorship.model.UserDetailModel;
 
 @Repository
@@ -81,25 +82,30 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public boolean login(LoginModel loginModel) {
+	public LoginResponseModel login(LoginModel loginModel) {
+		LoginResponseModel loginResponseModel = new LoginResponseModel();
 		if(loginModel.isMentor()) {
 			Session currentSession = entityManager.unwrap(Session.class);
 			Query query = currentSession.createQuery("from Mentor where email = :email and password = :password");
 			query.setParameter("email", loginModel.getEmail());
 			query.setParameter("password", loginModel.getPassword());
 			if(query.getResultList().size() > 0) {
-				return true;
+				loginResponseModel.setSuccessful(true);
+				loginResponseModel.setUserType("mentor");
+				return loginResponseModel;
 			}
-			return false;
+			return null;
 		} else {
 			Session currentSession = entityManager.unwrap(Session.class);
 			Query query = currentSession.createQuery("from Student where email = :email and password = :password");
 			query.setParameter("email", loginModel.getEmail());
 			query.setParameter("password", loginModel.getPassword());
 			if(query.getResultList().size() > 0) {
-				return true;
+				loginResponseModel.setSuccessful(true);
+				loginResponseModel.setUserType("student");
+				return loginResponseModel;
 			}
-			return false;
+			return null;
 		}
 	}
 

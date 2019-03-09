@@ -2,16 +2,16 @@ package com.khoa.mentorship.model;
 
 public class LoginResponseModel {
 	
-	public boolean isSuccessful;
+	public boolean successful;
 	
 	public String userType;
 
 	public boolean isSuccessful() {
-		return isSuccessful;
+		return successful;
 	}
 
-	public void setSuccessful(boolean isSuccessful) {
-		this.isSuccessful = isSuccessful;
+	public void setSuccessful(boolean successful) {
+		this.successful = successful;
 	}
 
 	public String getUserType() {

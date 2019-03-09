@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.khoa.mentorship.dao.UserDAO;
 import com.khoa.mentorship.model.LoginModel;
+import com.khoa.mentorship.model.LoginResponseModel;
 import com.khoa.mentorship.model.UserDetailModel;
 import com.khoa.mentorship.service.UserService;
 
@@ -29,7 +30,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public boolean login(LoginModel loginModel) {
+	public LoginResponseModel login(LoginModel loginModel) {
 		return userDAO.login(loginModel);
 	}
 
