@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.khoa.mentorship.dao.UserDAO;
+import com.khoa.mentorship.model.LoginModel;
 import com.khoa.mentorship.model.UserDetailModel;
 import com.khoa.mentorship.service.UserService;
 
@@ -25,6 +26,11 @@ public class UserServiceImpl implements UserService {
 	@Transactional
 	public boolean activateAcccount(String email) {
 		return userDAO.activateAcccount(email);
+	}
+
+	@Override
+	public boolean login(LoginModel loginModel) {
+		return userDAO.login(loginModel);
 	}
 
 }

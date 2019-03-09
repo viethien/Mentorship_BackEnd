@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.khoa.mentorship.model.LoginModel;
 import com.khoa.mentorship.model.UserDetailModel;
 import com.khoa.mentorship.service.UserService;
 
@@ -28,6 +29,11 @@ public class UserController {
 	@GetMapping("/activate/{email}")
 	public boolean activateAcccount(@PathVariable String email) {
 		return userService.activateAcccount(email);
+	}
+	
+	@PostMapping("/login")
+	public boolean login(@RequestBody LoginModel loginModel) {
+		return userService.login(loginModel);
 	}
 
 }
