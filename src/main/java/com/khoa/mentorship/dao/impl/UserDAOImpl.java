@@ -1,6 +1,7 @@
 package com.khoa.mentorship.dao.impl;
 
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,7 @@ import com.khoa.mentorship.dao.UniversityDAO;
 import com.khoa.mentorship.dao.UserDAO;
 import com.khoa.mentorship.entity.Mentor;
 import com.khoa.mentorship.entity.Student;
+import com.khoa.mentorship.model.LoginModel;
 import com.khoa.mentorship.model.UserDetailModel;
 
 @Repository
@@ -76,6 +78,29 @@ public class UserDAOImpl implements UserDAO {
 			return true;
 		}
 		return false;		
+	}
+
+	@Override
+	public boolean login(LoginModel loginModel) {
+		if(loginModel.isMentor()) {
+			Session currentSession = entityManager.unwrap(Session.class);
+			Query query = currentSession.createQuery("from Mentor where email = :email and password = :password");
+			query.setParameter("email", loginModel.getEmail());
+			query.setParameter("password", loginModel.getPassword());
+			if(query.getResultList().size() > 0) {
+				return true;
+			}
+			return false;
+		} else {
+			Session currentSession = entityManager.unwrap(Session.class);
+			Query query = currentSession.createQuery("from Student where email = :email and password = :password");
+			query.setParameter("email", loginModel.getEmail());
+			query.setParameter("password", loginModel.getPassword());
+			if(query.getResultList().size() > 0) {
+				return true;
+			}
+			return false;
+		}
 	}
 
 }
