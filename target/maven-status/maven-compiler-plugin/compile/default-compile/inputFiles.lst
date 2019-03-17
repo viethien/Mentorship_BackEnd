@@ -2,6 +2,8 @@
 /Users/Khoa/Desktop/Mentorship_BackEnd/src/main/java/com/khoa/mentorship/dao/HighschoolDAO.java
 /Users/Khoa/Desktop/Mentorship_BackEnd/src/main/java/com/khoa/mentorship/dao/UserDAO.java
 /Users/Khoa/Desktop/Mentorship_BackEnd/src/main/java/com/khoa/mentorship/entity/Highschool.java
+/Users/Khoa/Desktop/Mentorship_BackEnd/src/main/java/com/khoa/mentorship/model/LoginModel.java
+/Users/Khoa/Desktop/Mentorship_BackEnd/src/main/java/com/khoa/mentorship/model/LoginResponseModel.java
 /Users/Khoa/Desktop/Mentorship_BackEnd/src/main/java/com/khoa/mentorship/dao/impl/UniversityDAOImpl.java
 /Users/Khoa/Desktop/Mentorship_BackEnd/src/main/java/com/khoa/mentorship/service/RegisterService.java
 /Users/Khoa/Desktop/Mentorship_BackEnd/src/main/java/com/khoa/mentorship/dao/impl/RegisterDAOImpl.java

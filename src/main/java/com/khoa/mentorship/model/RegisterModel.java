@@ -11,8 +11,6 @@ public class RegisterModel {
 	public Types type;
 	
 	public String password;
-	
-	public String confirmPassword;
 
 	public String getFirstName() {
 		return firstName;
@@ -52,14 +50,6 @@ public class RegisterModel {
 
 	public void setPassword(String password) {
 		this.password = password;
-	}
-
-	public String getConfirmPassword() {
-		return confirmPassword;
-	}
-
-	public void setConfirmPassword(String confirmPassword) {
-		this.confirmPassword = confirmPassword;
 	}
 
 }

@@ -21,7 +21,7 @@ public class RegisterDAOImpl implements RegisterDAO {
 	@Override
 	public boolean registerUser(RegisterModel registerModel) {
 		Session currentSession = entityManager.unwrap(Session.class);
-		if(registerModel.getType() == Types.HIGHSCHOOL_STUDENT) {
+		if(registerModel.getType() == Types.STUDENT) {
 			Student student = new Student();
 			student.setStudentId(0);
 			student.setFirstName(registerModel.getFirstName());
@@ -29,7 +29,7 @@ public class RegisterDAOImpl implements RegisterDAO {
 			student.setEmail(registerModel.email);
 			student.setPassword(registerModel.getPassword());
 			currentSession.saveOrUpdate(student);
-		} else if (registerModel.getType() == Types.PROFESSOR) {
+		} else if (registerModel.getType() == Types.MENTOR) {
 			Mentor mentor = new Mentor();
 			mentor.setMentorId(0);
 			mentor.setFirstName(registerModel.getFirstName());
