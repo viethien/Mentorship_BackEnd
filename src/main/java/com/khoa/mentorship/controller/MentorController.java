@@ -21,13 +21,18 @@ public class MentorController {
 	private MentorService mentorService;
 	
 	@GetMapping("/mentors")
-	public List<Mentor> getMentorByEmail(String email) {
+	public List<Mentor> getAllMentors() {
 		return mentorService.getAllMentos();
 	}
 	
 	@GetMapping("/mentors/{id}")
 	public Mentor getMentorById(@PathVariable int id) {
 		return mentorService.getMentorById(id);
+	}
+	
+	@GetMapping("/mentors/email/{email}")
+	public Mentor getMentorByEmail(@PathVariable String email) {
+		return mentorService.getMentorByEmail(email);
 	}
 
 }

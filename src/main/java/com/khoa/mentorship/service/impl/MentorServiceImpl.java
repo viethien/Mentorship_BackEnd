@@ -25,4 +25,9 @@ public class MentorServiceImpl implements MentorService {
 		return mentorDAO.getMentorById(id);
 	}
 
+	@Override
+	public Mentor getMentorByEmail(String email) {
+		return mentorDAO.getMentorByEmail(email);
+	}
+
 }

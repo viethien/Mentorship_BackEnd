@@ -1,9 +1,13 @@
 package com.khoa.mentorship.service.impl;
 
+import javax.mail.MessagingException;
+import javax.mail.internet.MimeMessage;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.MailException;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Component;
 
 import com.khoa.mentorship.service.EmailService;
@@ -16,12 +20,28 @@ public class EmailServiceImpl implements EmailService {
 
 	public void sendSimpleMessage(String to, String subject, String text) {
 		try {
-			SimpleMailMessage message = new SimpleMailMessage();
-			message.setTo(to);
-			message.setSubject(subject);
-			message.setText(text);
+//			SimpleMailMessage message = new SimpleMailMessage();
+//			message.setTo(to);
+//			message.setSubject(subject);
+//			message.setText(text);
+			
+			MimeMessage message = emailSender.createMimeMessage();
 
-			emailSender.send(message);
+			try {
+				MimeMessageHelper helper = new MimeMessageHelper(message, false, "utf-8");
+				String htmlMsg = text;
+				message.setContent(htmlMsg, "text/html");
+				
+				message.setSubject(subject);
+				helper = new MimeMessageHelper(message, true);
+				helper.setFrom("admin@mentorship.com");
+				helper.setTo(to);
+				helper.setText(text, true);
+				emailSender.send(message);
+			} catch (MessagingException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		} catch (MailException exception) {
 			exception.printStackTrace();
 		}
