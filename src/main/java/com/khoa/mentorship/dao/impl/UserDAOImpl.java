@@ -84,29 +84,47 @@ public class UserDAOImpl implements UserDAO {
 	@Override
 	public LoginResponseModel login(LoginModel loginModel) {
 		LoginResponseModel loginResponseModel = new LoginResponseModel();
-		if(loginModel.isMentor()) {
-			Session currentSession = entityManager.unwrap(Session.class);
-			Query query = currentSession.createQuery("from Mentor where email = :email and password = :password");
-			query.setParameter("email", loginModel.getEmail());
-			query.setParameter("password", loginModel.getPassword());
-			if(query.getResultList().size() > 0) {
-				loginResponseModel.setSuccessful(true);
-				loginResponseModel.setUserType("mentor");
-				return loginResponseModel;
-			}
-			return null;
-		} else {
-			Session currentSession = entityManager.unwrap(Session.class);
-			Query query = currentSession.createQuery("from Student where email = :email and password = :password");
-			query.setParameter("email", loginModel.getEmail());
-			query.setParameter("password", loginModel.getPassword());
-			if(query.getResultList().size() > 0) {
-				loginResponseModel.setSuccessful(true);
-				loginResponseModel.setUserType("student");
-				return loginResponseModel;
-			}
-			return null;
+		Session currentSession = entityManager.unwrap(Session.class);
+		Query query = currentSession.createQuery("from Mentor where email = :email and password = :password");
+		query.setParameter("email", loginModel.getEmail());
+		query.setParameter("password", loginModel.getPassword());
+		if(query.getResultList().size() > 0) {
+			loginResponseModel.setSuccessful(true);
+			loginResponseModel.setUserType("mentor");
+			return loginResponseModel;
 		}
+		query = currentSession.createQuery("from Student where email = :email and password = :password");
+		query.setParameter("email", loginModel.getEmail());
+		query.setParameter("password", loginModel.getPassword());
+		if(query.getResultList().size() > 0) {
+			loginResponseModel.setSuccessful(true);
+			loginResponseModel.setUserType("student");
+			return loginResponseModel;
+		}
+		return null;
+//		if(loginModel.isMentor()) {
+//			Session currentSession = entityManager.unwrap(Session.class);
+//			Query query = currentSession.createQuery("from Mentor where email = :email and password = :password");
+//			query.setParameter("email", loginModel.getEmail());
+//			query.setParameter("password", loginModel.getPassword());
+//			if(query.getResultList().size() > 0) {
+//				loginResponseModel.setSuccessful(true);
+//				loginResponseModel.setUserType("mentor");
+//				return loginResponseModel;
+//			}
+//			return null;
+//		} else {
+//			Session currentSession = entityManager.unwrap(Session.class);
+//			Query query = currentSession.createQuery("from Student where email = :email and password = :password");
+//			query.setParameter("email", loginModel.getEmail());
+//			query.setParameter("password", loginModel.getPassword());
+//			if(query.getResultList().size() > 0) {
+//				loginResponseModel.setSuccessful(true);
+//				loginResponseModel.setUserType("student");
+//				return loginResponseModel;
+//			}
+//			return null;
+//		}
 	}
 
 }

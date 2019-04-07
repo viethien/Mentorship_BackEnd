@@ -4,7 +4,6 @@ public class LoginModel {
 	
 	private String email;
 	private String password;
-	private boolean mentor;
 	
 	public String getEmail() {
 		return email;
@@ -17,12 +16,6 @@ public class LoginModel {
 	}
 	public void setPassword(String password) {
 		this.password = password;
-	}
-	public boolean isMentor() {
-		return mentor;
-	}
-	public void setMentor(boolean mentor) {
-		this.mentor = mentor;
 	}
 	
 }
